@@ -1,0 +1,120 @@
+newmtl generic_neutral_mesh:M_Chin
+illum 4
+Kd 0.71 0.72 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_Eyelids
+illum 4
+Kd 0.73 1.00 0.78
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_FaceMask
+illum 4
+Kd 1.00 0.73 0.73
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_Iris
+illum 4
+Kd 0.26 0.26 0.26
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 38.66
+newmtl generic_neutral_mesh:M_Lips
+illum 4
+Kd 0.70 0.51 0.53
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_MouthSocket
+illum 4
+Kd 0.05 0.05 0.05
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.00 0.00 0.00
+Ns 18.00
+newmtl generic_neutral_mesh:M_Moutharea
+illum 4
+Kd 1.00 0.87 0.61
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_Nose
+illum 4
+Kd 0.79 0.70 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_OuterFace
+illum 4
+Kd 1.00 0.89 0.66
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:M_Sclera
+illum 4
+Kd 1.00 0.95 0.83
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 38.00
+newmtl generic_neutral_mesh:lambert2SG
+illum 4
+Kd 0.35 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:phong1SG
+illum 4
+Kd 0.80 0.63 0.77
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:phong2SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.18 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl generic_neutral_mesh:phong3SG
+illum 4
+Kd 0.84 1.00 0.90
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+newmtl phong1SG
+illum 4
+Kd 0.61 0.61 0.61
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00

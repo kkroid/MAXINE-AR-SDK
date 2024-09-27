@@ -2,7 +2,9 @@
 # The Expression app #
 ######################
 set(APP_SRCS
-    ExpressionApp.cpp
+    # ExpressionApp.cpp
+    App.h App.cpp 
+    NvMaxine.h NvMaxine.cpp
     MeshRenderer.cpp MeshRenderer.h
     DirectoryIterator.cpp DirectoryIterator.h
     BackEndOpenGL/GLMaterial.cpp BackEndOpenGL/GLMaterial.h
@@ -44,7 +46,12 @@ if (${ENABLE_UI})
     )
 endif (${ENABLE_UI})
 
-add_executable(ExpressionApp ${APP_SRCS})
+add_library(ExpressionAppLib SHARED ${APP_SRCS})
+target_compile_definitions(ExpressionAppLib PRIVATE BUILD_NVMAXINE)
+# Main.cpp
+add_executable(ExpressionApp Main.cpp NvMaxine.h)
+target_link_libraries(ExpressionApp PRIVATE ExpressionAppLib)
+
 
 target_include_directories(ExpressionApp PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -53,32 +60,41 @@ target_include_directories(ExpressionApp PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/../external/glm/include
     ${SDK_INCLUDES_PATH}
 )
+
+target_include_directories(ExpressionAppLib PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/BackEndOpenGL
+    ${CMAKE_CURRENT_SOURCE_DIR}/../utils
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/glm/include
+    ${SDK_INCLUDES_PATH}
+)
+
 if (${ENABLE_UI})
     add_definitions("-D_ENABLE_UI")
-    target_include_directories(ExpressionApp PUBLIC
+    target_include_directories(ExpressionAppLib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/Imgui/imgui-docking
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/nlohmann/json/single_include/nlohmann
     )
 endif (${ENABLE_UI})
 
 if(WIN32)
-    target_link_libraries(ExpressionApp PUBLIC
+    target_link_libraries(ExpressionAppLib PUBLIC
         opencv346
         glfw3
         GLAD
         ${OPENGL_gl_LIBRARY}
     )
-    target_link_directories(ExpressionApp PUBLIC
+    target_link_directories(ExpressionAppLib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/GLAD/lib
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/GLFW/lib
     )
-    target_include_directories(ExpressionApp PUBLIC
+    target_include_directories(ExpressionAppLib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/GLAD/include
         ${CMAKE_CURRENT_SOURCE_DIR}/../external/GLFW/include
     )
     set(OPENCV_PATH_STR ${CMAKE_CURRENT_SOURCE_DIR}/../external/opencv/bin)
     set(PATH_STR "PATH=%PATH%" ${OPENCV_PATH_STR})
-    set_target_properties(ExpressionApp PROPERTIES
+    set_target_properties(ExpressionAppLib PROPERTIES
         FOLDER SampleApps
         VS_DEBUGGER_ENVIRONMENT "${PATH_STR}"
         VS_DEBUGGER_COMMAND_ARGUMENTS "${CMD_ARG_STR}"  )

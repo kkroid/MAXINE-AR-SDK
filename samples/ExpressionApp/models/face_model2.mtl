@@ -1,0 +1,34 @@
+newmtl Face
+illum 4
+Kd 0.77 0.63 0.56
+Ka 0.25 0.21 0.19
+Tf 1.00 1.00 1.00
+Ni 1.00
+
+newmtl Iris
+illum 4
+Kd 0.18 0.18 0.18
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+
+newmtl MouthSocket
+illum 4
+Kd 0.44 0.22 0.22
+Ka 0.10 0.05 0.05
+
+Tf 1.00 1.00 1.00
+Ni 1.00
+
+newmtl Sclera
+illum 4
+Kd 0.89 0.89 0.89
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 18.00
+
+ 

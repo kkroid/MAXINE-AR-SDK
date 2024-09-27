@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10.0)
 
 # Set path where samples will be installed
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR} CACHE PATH "Path to where the samples will be installed")
+# set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR} CACHE PATH "Path to where the samples will be installed")
 
-project(NvAR_SDK CXX)
+project(NvAR_SDK)
 
 set(CMAKE_CONFIGURATION_TYPES "Release")
 
