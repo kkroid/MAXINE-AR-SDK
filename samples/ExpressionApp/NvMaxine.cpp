@@ -11,7 +11,9 @@ private:
 public:
     Impl() 
     {
+        printf("NvMaxine::Impl:Starting NvMaxine 0\n");
         app = std::make_unique<App>();
+        printf("NvMaxine::Impl:Starting NvMaxine 1\n");
     }
     ~Impl()
     {
@@ -57,7 +59,12 @@ public:
     }
 };
 
-NvMaxine::NvMaxine() : pImpl(new Impl) {}
+NvMaxine::NvMaxine()
+{
+    printf("NvMaxine::NvMaxine:Starting NvMaxine 0\n");
+    pImpl = new Impl();
+    printf("NvMaxine::NvMaxine:Starting NvMaxine 1\n");
+}
 
 NvMaxine::~NvMaxine()
 {

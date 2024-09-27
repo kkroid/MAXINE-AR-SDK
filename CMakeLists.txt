@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10.0)
 
 project(NvAR_SDK)
 
-set(CMAKE_CONFIGURATION_TYPES "Release")
+set(CMAKE_CONFIGURATION_TYPES "Release;RelWithDebInfo")
 
 # Require C++11 and disable non-standard extensions
 

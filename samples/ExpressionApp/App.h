@@ -213,8 +213,8 @@ static int StringToFourcc(const std::string &str)
 class App
 {
 public:
-    App() {}
-    ~App() { stop(); }
+    App();
+    ~App();
 
     using OnExpressionCallback = std::function<void(const std::vector<float> &)>;
 

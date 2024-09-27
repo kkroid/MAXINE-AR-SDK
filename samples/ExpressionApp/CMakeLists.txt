@@ -47,21 +47,17 @@ if (${ENABLE_UI})
 endif (${ENABLE_UI})
 
 add_library(ExpressionAppLib SHARED ${APP_SRCS})
-target_compile_definitions(ExpressionAppLib PRIVATE BUILD_NVMAXINE)
+target_compile_definitions(ExpressionAppLib PUBLIC BUILD_NVMAXINE)
 # Main.cpp
 add_executable(ExpressionApp Main.cpp NvMaxine.h)
 target_link_libraries(ExpressionApp PRIVATE ExpressionAppLib)
 
 
 target_include_directories(ExpressionApp PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}/BackEndOpenGL
-    ${CMAKE_CURRENT_SOURCE_DIR}/../utils
-    ${CMAKE_CURRENT_SOURCE_DIR}/../external/glm/include
-    ${SDK_INCLUDES_PATH}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../external/asio
 )
 
-target_include_directories(ExpressionAppLib PUBLIC
+target_include_directories(ExpressionAppLib PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/BackEndOpenGL
     ${CMAKE_CURRENT_SOURCE_DIR}/../utils

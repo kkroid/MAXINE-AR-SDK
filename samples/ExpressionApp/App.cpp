@@ -92,6 +92,16 @@ const char *App::_sfmExprAbbr[][4] = {
     {"SURPRISE", NULL, NULL, NULL},
 };
 
+App::App()
+{
+    printf("App::App:Starting App 0\n");
+}
+
+App::~App()
+{
+    printf("App::~App:Starting App 0\n");
+}
+
 void App::setOnExpressionCallback(OnExpressionCallback cb)
 {
     onExpressionCallback = cb;
