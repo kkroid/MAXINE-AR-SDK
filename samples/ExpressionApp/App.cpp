@@ -4,8 +4,8 @@ bool
     FLAG_debug = false,
     FLAG_loop = false,
     FLAG_show = true,
-    FLAG_showUI = true,
-    FLAG_verbose = false;
+    FLAG_showUI = false,
+    FLAG_verbose = true;
 std::string
     FLAG_camRes,
     FLAG_codec = DEFAULT_CODEC,
@@ -21,7 +21,7 @@ int
     FLAG_exprMode = 2,   // 1=mesh, 2=MLP
     FLAG_poseMode = 0,
     FLAG_cheekPuff = 0,
-    FLAG_gaze = 0;
+    FLAG_gaze = 1;
 double
     FLAG_fov = 0.0; // Orthographic by default
 
@@ -751,6 +751,7 @@ NvCV_Status App::run()
                 break;
             case 'n':
                 _performCalibration = true;
+                printf("Calibrating expression weights\n");
                 break;
             case 'p':
                 _viewMode ^= VIEW_PLOT;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <fstream>
 
 // 固定的索引映射关系
 std::vector<int> index_mapping = {
@@ -33,15 +34,23 @@ int main(int argc, char **argv)
         // printf("expressions: %d\n", expressions.size());
         size_t size = index_mapping.size();
         std::vector<float> new_expressions(61, 0.0f);
+        std::string expression_str = "[";
         for (size_t i = 0; i < size; i++)
         {
             new_expressions[i] = expressions[index_mapping[i]];
-            // printf("%d -> %d, value:%f", i, index_mapping[i], expressions[index_mapping[i]]);
+            expression_str += std::to_string(new_expressions[i]);
+            if (i < size - 1) expression_str += ", ";
         }
+        expression_str += "],\n";
         // printf("\n");
+        // 将expression_str以追加的方式写入文件
+        std::ofstream outfile("expressions.txt", std::ios::app);
+        outfile << expression_str;
+        outfile.close();
+
         // printf("jawOpen: %f, eyeBlinkLeft: %f\n", new_expressions[17], new_expressions[0]);
+        Packet.setupHeader();
         Packet.setPayload(PackageNum, new_expressions);
-        Packet.serialize();
         auto SentBytes = Socket.send_to(asio::buffer(Packet.get_data()), ServerEndpoint);
         // printf("Sent %llu bytes\n", SentBytes);
         PackageNum++;
